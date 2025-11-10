@@ -1,0 +1,147 @@
+.todo-cont {
+    border-radius: 8px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    transition: all 0.3s;
+    padding: 20px 13px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    width: 95%;
+    margin: 0 auto;
+    transition: all 0.4s ease;
+}
+
+.todo-cont:hover {
+   padding: 30px 14px;
+}
+
+.todo-cont .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #0d47a1;
+}
+
+.todo-cont .content .title {
+   font-size: 22px;
+   font-weight: bold;
+}
+
+.todo-cont .content .description {
+   font-size: 18px;
+   font-weight: 700;
+   color: rgb(82, 82, 82);
+}
+
+.todo-cont .actions {
+    display: flex;
+    gap: 6px;
+    margin-left: 8px;
+}
+
+.todo-cont .actions button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.todo-cont .actions button.check:hover {
+   color: green !important;
+}
+
+.todo-cont .actions button:hover {
+     background: rgb(223, 223, 223) !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.todo-cont .actions button.check {
+    border: 1px solid green !important;
+    background: white;
+}
+
+.todo-cont .actions button.edit {
+    border: 1px solid black;
+}
+
+.todo-cont .actions button.delete {
+   border: 1px solid red;
+}
+
+
+/* START RESPONSIVE DESIGN*/
+@media (max-width: 767px) {
+    .todo-cont {
+        padding: 15px;
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    .todo-cont:hover {
+   padding: 18px;
+}
+
+    .todo-cont .content .title {
+   font-size: 17px;
+   font-weight: bold;
+}
+
+.todo-cont .content .description {
+   font-size: 16px;
+}
+.todo-cont .actions button {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+}
+
+.update-dialog {
+    width: 300px;
+}
+
+.update-dialog p {
+    font-size: 17px;
+}
+
+.update-dialog .inputs {
+    flex-direction: column;
+    align-items: center;
+}
+
+.update-dialog input {
+    padding: 10px;
+    font-size: 13px;
+}
+
+ }
+
+ @media (min-width: 768px) and (max-width: 991px) {
+    .todo-cont {
+        padding: 16px;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .todo-cont:hover {
+   padding: 19px;
+}
+
+    .todo-cont .content .title {
+   font-size: 20px;
+   font-weight: bold;
+}
+
+.todo-cont .content .description {
+   font-size: 17px;
+}
+ }
+
+/* END RESPONSIVE DESIGN*/
