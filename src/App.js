@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <ToastProvider>
-        <TodosProvider> 
+        <TodosProvider>
             <Todolist/>
         </TodosProvider>
     </ToastProvider>
