@@ -1,19 +1,27 @@
-import {createContext , useState , useContext} from "react";
+import { createContext, useContext, useState } from "react";
 
-const TodosContext = createContext();
+const TodosContext = createContext(null);
 
-export const TodosProvider = ({children})=>{
+export const TodosProvider = ({ children }) => {
+  const [todos, setTodos] = useState([]);
 
-    const [todos,setTodos] = useState([]);
+  const value = {
+    todos,
+    setTodos,
+  };
 
-    return(
-       <TodosContext.Provider value= {{todos,setTodos}}> {/* value={{todos: todos,setTodos: setTodos}}  SAME THING*/}
-        {children}
-       </TodosContext.Provider> 
-    )
-}
+  return (
+    <TodosContext.Provider value={value}>{children}</TodosContext.Provider>
+  );
+};
 
-// CUSTOM HOOK 
-export const useTodos = ()=>{
-    return useContext(TodosContext);
-}
+// Custom Hook
+export const useTodos = () => {
+  const context = useContext(TodosContext);
+
+  if (!context) {
+    throw new Error("useTodos must be used within a TodosProvider");
+  }
+
+  return context;
+};

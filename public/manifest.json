@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Taskly",
+  "name": "Taskly — Plan Smarter. Get Things Done.",
+  "description": "A modern task management app to organize your tasks and boost productivity.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +21,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#6D5DFB",
+  "background_color": "#F5F5FA"
 }

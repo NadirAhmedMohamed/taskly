@@ -1,147 +1,283 @@
+/* ========================================
+   TASKLY — TODO CARDS
+======================================== */
+
 .todo-cont {
-    border-radius: 8px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: space-between; 
-    transition: all 0.3s;
-    padding: 20px 13px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-    width: 95%;
-    margin: 0 auto;
-    transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  width: 100%;
+  margin: 0 auto;
+  padding: 19px 20px;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-sm);
+
+  font-weight: 600;
+  transition: var(--transition);
 }
 
 .todo-cont:hover {
-   padding: 30px 14px;
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-light);
 }
 
+/* ========================================
+   TODO CONTENT
+======================================== */
+
 .todo-cont .content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    color: #0d47a1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+
+  flex: 1;
+  min-width: 0;
+
+  color: var(--text-primary);
+  text-align: left;
 }
 
 .todo-cont .content .title {
-   font-size: 22px;
-   font-weight: bold;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.5;
+
+  overflow-wrap: anywhere;
 }
 
 .todo-cont .content .description {
-   font-size: 18px;
-   font-weight: 700;
-   color: rgb(82, 82, 82);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.6;
+
+  color: var(--text-secondary);
+  overflow-wrap: anywhere;
 }
 
+/* ========================================
+   COMPLETED TASK
+======================================== */
+
+.todo-cont.completed {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+  box-shadow: none;
+}
+
+.todo-cont.completed:hover {
+  background: #ecfdf3;
+  border-color: #86efac;
+  box-shadow: 0 8px 20px rgba(22, 163, 74, 0.07);
+}
+
+.todo-cont.completed .content .title {
+  color: #64748b;
+  text-decoration: line-through;
+  text-decoration-color: #16a34a;
+  text-decoration-thickness: 1.5px;
+}
+
+.todo-cont.completed .content .description {
+  color: #94a3b8;
+}
+
+/* Completed Status Label */
+.todo-cont .task-status {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+
+  padding: 5px 9px;
+
+  background: #dcfce7;
+  color: #15803d;
+
+  border: 1px solid #bbf7d0;
+  border-radius: 20px;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+/* ========================================
+   TODO ACTIONS
+======================================== */
+
 .todo-cont .actions {
-    display: flex;
-    gap: 6px;
-    margin-left: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  flex-shrink: 0;
 }
 
 .todo-cont .actions button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: white;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-}
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-.todo-cont .actions button.check:hover {
-   color: green !important;
+  width: 38px;
+  height: 38px;
+
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+
+  font-size: 14px;
+  cursor: pointer;
+
+  transition: var(--transition);
 }
 
 .todo-cont .actions button:hover {
-     background: rgb(223, 223, 223) !important;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
 }
 
+/* Complete Button */
 .todo-cont .actions button.check {
-    border: 1px solid green !important;
-    background: white;
+  color: var(--success);
+  border-color: #bbf7d0;
+  background: #ffffff;
 }
 
+.todo-cont .actions button.check:hover {
+  background: var(--success-light);
+}
+
+/* Completed Check Button */
+.todo-cont.completed .actions button.check {
+  background: var(--success);
+  color: #ffffff;
+  border-color: var(--success);
+}
+
+.todo-cont.completed .actions button.check:hover {
+  background: #15803d;
+  border-color: #15803d;
+}
+
+/* Edit Button */
 .todo-cont .actions button.edit {
-    border: 1px solid black;
+  color: var(--primary);
+  border-color: var(--primary-light);
 }
 
+.todo-cont .actions button.edit:hover {
+  background: var(--primary-light);
+}
+
+/* Delete Button */
 .todo-cont .actions button.delete {
-   border: 1px solid red;
+  color: var(--danger);
+  border-color: #fecaca;
 }
 
+.todo-cont .actions button.delete:hover {
+  background: var(--danger-light);
+}
 
-/* START RESPONSIVE DESIGN*/
+/* ========================================
+   FOCUS ACCESSIBILITY
+======================================== */
+
+.todo-cont .actions button:focus-visible {
+  outline: 3px solid var(--primary-light);
+  outline-offset: 3px;
+}
+
+/* ========================================
+   TABLET RESPONSIVE
+======================================== */
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .todo-cont {
+    padding: 17px;
+    gap: 12px;
+  }
+
+  .todo-cont .content .title {
+    font-size: 16px;
+  }
+
+  .todo-cont .actions {
+    gap: 6px;
+  }
+
+  .todo-cont .actions button {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* ========================================
+   MOBILE RESPONSIVE
+======================================== */
+
 @media (max-width: 767px) {
-    .todo-cont {
-        padding: 15px;
-        width: 85%;
-        margin: 0 auto;
-    }
+  .todo-cont {
+    padding: 15px 12px;
+    gap: 10px;
+    border-radius: var(--radius-md);
+  }
 
-    .todo-cont:hover {
-   padding: 18px;
+  .todo-cont:hover {
+    transform: translateY(-2px);
+  }
+
+  .todo-cont .content {
+    gap: 5px;
+  }
+
+  .todo-cont .content .title {
+    font-size: 14px;
+  }
+
+  .todo-cont .content .description {
+    font-size: 12px;
+  }
+
+  .todo-cont .actions {
+    gap: 5px;
+    margin-left: 0;
+  }
+
+  .todo-cont .actions button {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+    border-radius: 9px;
+  }
+
+  .todo-cont .task-status {
+    padding: 4px 7px;
+    font-size: 9px;
+  }
 }
 
-    .todo-cont .content .title {
-   font-size: 17px;
-   font-weight: bold;
+/* Small Mobile */
+@media (max-width: 380px) {
+  .todo-cont {
+    padding: 12px 9px;
+    gap: 7px;
+  }
+
+  .todo-cont .actions {
+    gap: 4px;
+  }
+
+  .todo-cont .actions button {
+    width: 29px;
+    height: 29px;
+    font-size: 11px;
+  }
 }
-
-.todo-cont .content .description {
-   font-size: 16px;
-}
-.todo-cont .actions button {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-}
-
-.update-dialog {
-    width: 300px;
-}
-
-.update-dialog p {
-    font-size: 17px;
-}
-
-.update-dialog .inputs {
-    flex-direction: column;
-    align-items: center;
-}
-
-.update-dialog input {
-    padding: 10px;
-    font-size: 13px;
-}
-
- }
-
- @media (min-width: 768px) and (max-width: 991px) {
-    .todo-cont {
-        padding: 16px;
-        width: 90%;
-        margin: 0 auto;
-    }
-
-    .todo-cont:hover {
-   padding: 19px;
-}
-
-    .todo-cont .content .title {
-   font-size: 20px;
-   font-weight: bold;
-}
-
-.todo-cont .content .description {
-   font-size: 17px;
-}
- }
-
-/* END RESPONSIVE DESIGN*/

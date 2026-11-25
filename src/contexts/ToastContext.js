@@ -1,38 +1,55 @@
-import { createContext } from "react";
-import {useState , useContext } from "react"
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+  useCallback,
+} from "react";
+
 import "./ToastContext.css";
 
+const ToastContext = createContext(null);
 
-const ToastContext = createContext({});
+export const ToastProvider = ({ children }) => {
+  const [open, setOpen] = useState(false);
+  const [message, setMessage] = useState("");
 
+  const timerRef = useRef(null);
 
-export const ToastProvider = ({children})=>{
-
-    // STATES 
-        const [open,setOpen] = useState(false);
-        const [message,setMessage] = useState();
-    // STATES 
-
-    function showToast(msg){
-        setMessage(msg);
-        if(open === false){
-            setOpen(true);
-             setTimeout(()=>{
-            setOpen(false);
-        },2000)
-        }
+  const showToast = useCallback((msg) => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
     }
 
-    return (
-        <ToastContext.Provider value ={{showToast}}>
-            <div className={"toast"} style={{display: open ? "flex" : "none"}}>{message}</div>
-           {children}
-        </ToastContext.Provider>
-    )
-}
+    setMessage(msg);
+    setOpen(true);
 
+    timerRef.current = setTimeout(() => {
+      setOpen(false);
+      timerRef.current = null;
+    }, 2500);
+  }, []);
 
-// CUSTOM HOOK
-export const useToast = ()=>{
-    return useContext(ToastContext);
-}
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+    };
+  }, []);
+
+  return (
+    <ToastContext.Provider value={{ showToast }}>
+      {open && (
+        <div className="toast" role="status" aria-live="polite">
+          {message}
+        </div>
+      )}
+
+      {children}
+    </ToastContext.Provider>
+  );
+};
+
+export const useToast = () => useContext(ToastContext);

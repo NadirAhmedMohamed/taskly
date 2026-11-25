@@ -1,13 +1,103 @@
-body {
+/* ========================================
+   TASKLY — GLOBAL DESIGN SYSTEM
+======================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+:root {
+  /* Brand Colors */
+  --primary: #6d5dfb;
+  --primary-hover: #5948e8;
+  --primary-light: #eeecff;
+  --primary-soft: #f5f3ff;
+
+  /* Neutral Colors */
+  --background: #f5f5fa;
+  --surface: #ffffff;
+  --surface-hover: #f8f8fc;
+
+  --text-primary: #171827;
+  --text-secondary: #77788a;
+  --text-muted: #a1a2b2;
+
+  /* Status Colors */
+  --success: #16a34a;
+  --success-light: #dcfce7;
+
+  --warning: #f59e0b;
+  --warning-light: #fef3c7;
+
+  --danger: #ef4444;
+  --danger-light: #fee2e2;
+
+  /* Borders & Shadows */
+  --border: #e9e9f1;
+  --shadow-sm: 0 2px 8px rgba(23, 24, 39, 0.04);
+  --shadow-md: 0 8px 24px rgba(23, 24, 39, 0.07);
+  --shadow-lg: 0 20px 40px rgba(23, 24, 39, 0.12);
+
+  /* Typography */
+  --font-primary: "Inter", sans-serif;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+
+  /* Transitions */
+  --transition: 0.25s ease;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+}
+
+/* HTML */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Body */
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: var(--font-primary);
+  background: var(--background);
+  color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Root */
+#root {
+  min-height: 100vh;
+}
+
+/* Buttons & Inputs */
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Selection */
+::selection {
+  background: var(--primary-light);
+  color: var(--primary);
 }
