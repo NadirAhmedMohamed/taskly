@@ -1,70 +1,136 @@
-# Getting Started with Create React App
+# Taskly | Task Management App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple and intuitive task management application built with React. Taskly helps users organize daily tasks, track their progress, and stay productive through a clean and user-friendly interface.
 
-## Available Scripts
+## ✨ Features
 
-In the project directory, you can run:
+- **Add Tasks:** Create new tasks and organize your daily activities.
+- **Edit Tasks:** Update existing task details whenever needed.
+- **Delete Tasks:** Remove tasks you no longer need.
+- **Task Completion:** Mark tasks as completed or active.
+- **Task Filtering:** Filter tasks by All, Completed, and Active.
+- **Local Storage:** Persist tasks in the browser so they remain available after refreshing the page.
+- **Toast Notifications:** Get feedback when performing task actions.
+- **Context API:** Manage application state using React Context.
 
-### `npm start`
+## 📸 Screenshots
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Main Interface
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Taskly Main Interface](screenshots/main-interface.png)
 
-### `npm test`
+### Task Management
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Taskly Task Management](screenshots/task-management.png)
 
-### `npm run build`
+### Delete Task Dialog
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Taskly Delete Task Dialog](screenshots/delete-task-dialog.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Update Task Dialog
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Taskly Update Task Dialog](screenshots/update-task-dialog.png)
 
-### `npm run eject`
+## 🛠️ Tech Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+| Technology        | Purpose                        |
+| ----------------- | ------------------------------ |
+| React 19          | Building the user interface    |
+| JavaScript (ES6+) | Application logic              |
+| HTML5             | Application structure          |
+| CSS3              | Styling and responsive layouts |
+| React Context API | Global state management        |
+| Local Storage     | Persistent task storage        |
+| React Icons       | Interface icons                |
+| Create React App  | Development and build tooling  |
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📂 Project Structure
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```text
+Taskly/
+├── public/
+├── screenshots/
+│   ├── main-interface.png
+│   ├── task-management.png
+│   ├── delete-task-dialog.png
+│   └── update-task-dialog.png
+├── src/
+│   ├── components/
+│   │   ├── Todo.js
+│   │   ├── Todo.css
+│   │   ├── Todolist.js
+│   │   └── Todolist.css
+│   ├── contexts/
+│   │   ├── TodosContext.js
+│   │   ├── ToastContext.js
+│   │   └── ToastContext.css
+│   ├── App.js
+│   ├── App.css
+│   ├── index.js
+│   └── index.css
+├── package.json
+└── README.md
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🚀 Getting Started
 
-## Learn More
+Follow these steps to run Taskly locally.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Prerequisites
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Node.js
+- npm
 
-### Code Splitting
+### Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Clone the repository:
 
-### Analyzing the Bundle Size
+```bash
+git clone https://github.com/NadirAhmedMohamed/taskly.git
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. Navigate to the project directory:
 
-### Making a Progressive Web App
+```bash
+cd taskly
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+3. Install dependencies:
 
-### Advanced Configuration
+```bash
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+4. Start the development server:
 
-### Deployment
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The application will run locally at:
 
-### `npm run build` fails to minify
+```text
+http://localhost:3000
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📦 Production Build
+
+To create an optimized production build, run:
+
+```bash
+npm run build
+```
+
+The production files will be generated in the `build/` directory.
+
+## 👨‍💻 Author
+
+**Nadir Ahmed**
+
+- GitHub: [NadirAhmedMohamed](https://github.com/NadirAhmedMohamed)
+- LinkedIn: [Nadir Ahmed](https://www.linkedin.com/in/nadirahmed10/)
+- Portfolio: [Nadir.Dev](https://portfolio-nadirahmed.netlify.app/)
+
+---
+
+Built with ❤️ using React.
