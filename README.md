@@ -1,10 +1,10 @@
 # Taskly | Task Management App
 
-A simple and intuitive task management application built with React. Taskly helps users organize daily tasks, track their progress, and stay productive through a clean and user-friendly interface.
+A simple and intuitive task management application built with React. Taskly helps users organize their daily tasks, track progress, and stay productive through a clean and user-friendly interface.
 
 ## ✨ Features
 
-- **Add Tasks:** Create new tasks and organize your daily activities.
+- **Add Tasks:** Create new tasks and organize daily activities.
 - **Edit Tasks:** Update existing task details whenever needed.
 - **Delete Tasks:** Remove tasks you no longer need.
 - **Task Completion:** Mark tasks as completed or active.
@@ -25,24 +25,24 @@ A simple and intuitive task management application built with React. Taskly help
 
 ### Delete Task Dialog
 
-![Taskly Delete Task Dialog](screenshots/delete-task-dialog.png)
+![Taskly Delete Task Dialog](screenshots/update-task-dialog.png)
 
 ### Update Task Dialog
 
-![Taskly Update Task Dialog](screenshots/update-task-dialog.png)
+![Taskly Update Task Dialog](screenshots/delete-task-dialog.png)
 
 ## 🛠️ Tech Stack
 
-| Technology        | Purpose                        |
-| ----------------- | ------------------------------ |
-| React 19          | Building the user interface    |
-| JavaScript (ES6+) | Application logic              |
-| HTML5             | Application structure          |
-| CSS3              | Styling and responsive layouts |
-| React Context API | Global state management        |
-| Local Storage     | Persistent task storage        |
-| React Icons       | Interface icons                |
-| Create React App  | Development and build tooling  |
+| Technology        | Purpose                       |
+| ----------------- | ----------------------------- |
+| React 19          | Building the user interface   |
+| JavaScript (ES6+) | Application logic             |
+| HTML5             | Application structure         |
+| CSS3              | Styling and layouts           |
+| React Context API | Global state management       |
+| Local Storage     | Persistent task storage       |
+| React Icons       | Interface icons               |
+| Create React App  | Development and build tooling |
 
 ## 📂 Project Structure
 
@@ -73,8 +73,6 @@ Taskly/
 ```
 
 ## 🚀 Getting Started
-
-Follow these steps to run Taskly locally.
 
 ### Prerequisites
 
@@ -109,9 +107,7 @@ npm start
 
 The application will run locally at:
 
-```text
-http://localhost:3000
-```
+`http://localhost:3000`
 
 ## 📦 Production Build
 
